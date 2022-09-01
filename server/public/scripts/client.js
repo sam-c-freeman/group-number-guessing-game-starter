@@ -2,9 +2,7 @@ $(document).ready(handleReady);
 
 function handleReady() {
  $('#submitButton').on('click', submitNumbers)
- $('#winnersCircle').on('click', '#resetButton', ()=>{
-  console.log('testing reset button');
- })
+ $('#winnersCircle').on('click', '#resetButton', resetGame)
 }
 let roundCounter = 0;
 
@@ -52,4 +50,16 @@ function fetchResults(){
   roundCounter ++;
   $('#roundCounter').text(`Round ${roundCounter}`);
   
+}
+
+function resetGame(){
+  $('#winnersCircle').empty();
+  $('#submitButton').prop('disabled', false);
+  $('#result1').text('');
+  $('#result2').text('');
+  $('#result3').text('');
+  $('#roundCounter').text(`Let's Play!`);
+
+  
+
 }

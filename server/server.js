@@ -23,14 +23,13 @@ app.post('/numbers', (req, res) => {
   console.log(numbersGuessed);
   numberComparison(numbersGuessed);
   res.sendStatus(200);
-})
+}) //original post route for game
 
 app.get('/numbers', (req,res)=>{
   console.log('get request received');
   res.send(results);
 })
 
-//next work on random number function
 
 function numberGenerator (){
   randomNumber = Math.floor(Math.random()* (25-1)+1);
@@ -59,6 +58,12 @@ function numberComparison(){
 }
 
 console.log(randomNumber);
+
+// app.post('/reset', (req, res) => {
+//   numbersGuessed = req.body.guessesObject;
+
+//   res.sendStatus(200);
+// }) //reset game post route
 
 
 app.listen(PORT, () => {
