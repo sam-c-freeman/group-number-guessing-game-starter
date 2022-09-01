@@ -60,6 +60,10 @@ function resetGame(){
   $('#result3').text('');
   $('#roundCounter').text(`Let's Play!`);
 
-  
+  $.ajax({
+    method: 'POST',
+    url: '/reset',
+    data: {guessesObject} // start here Friday!  What do we send?
+  }) 
 
 }
