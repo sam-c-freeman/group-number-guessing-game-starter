@@ -8,11 +8,14 @@ function submitNumbers (){
   let guessesObject = {
     player1:$('#input1').val(),
     player2:$('#input2').val(),
-    player3:$('#input1').val(),
+    player3:$('#input3').val(),
   };
+  $('#input1').val('');
+  $('#input2').val('');
+  $('#input3').val('');
   
   //will create post request below
-  //also need to clear inputs
+ 
   $.ajax({
     method: 'POST',
     url: '/numbers',
