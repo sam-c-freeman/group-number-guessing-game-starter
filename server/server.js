@@ -14,10 +14,6 @@ app.use(express.static('server/public'));
 // GET & POST Routes go here
 
 
-app.listen(PORT, () => {
-  console.log ('Server is running on port', PORT)
-})
-
 let numbersGuessed;
 
 app.post('/numbers', (req, res) => {
@@ -27,6 +23,11 @@ app.post('/numbers', (req, res) => {
   console.log(numbersGuessed);
   numberComparison(numbersGuessed);
   res.sendStatus(200);
+})
+
+app.get('/numbers', (req,res)=>{
+  console.log('get request received');
+  res.send(results);
 })
 
 //next work on random number function
@@ -58,4 +59,8 @@ function numberComparison(){
 }
 
 console.log(randomNumber);
-// numberComparison();
+
+
+app.listen(PORT, () => {
+  console.log ('Server is running on port', PORT)
+})
