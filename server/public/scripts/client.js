@@ -2,7 +2,11 @@ $(document).ready(handleReady);
 
 function handleReady() {
  $('#submitButton').on('click', submitNumbers)
+ $('#winnersCircle').on('click', '#resetButton', ()=>{
+  console.log('testing reset button');
+ })
 }
+let roundCounter = 0;
 
 function submitNumbers (){
   let guessesObject = {
@@ -37,10 +41,15 @@ function fetchResults(){
     $('#result2').text(results[1])
     $('#result3').text(results[2])
     for (let i=0; i<results.length; i++){
-      if (results[i] === 'win'){
+      if (results[i] === 'You Win!'){
         $('#winnersCircle').append(`<h1>Player ${i+1} is the winner!</h1>`);
+        $('#submitButton').prop('disabled', true);
+        $('#winnersCircle').append('<button id="resetButton">Play Again</button>')
       }
     }
   })
 
+  roundCounter ++;
+  $('#roundCounter').text(`Round ${roundCounter}`);
+  
 }

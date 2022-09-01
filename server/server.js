@@ -33,7 +33,7 @@ app.get('/numbers', (req,res)=>{
 //next work on random number function
 
 function numberGenerator (){
-  randomNumber = Math.floor(Math.random()* (25-1)+1).toString();
+  randomNumber = Math.floor(Math.random()* (25-1)+1);
   return randomNumber;
   
 }
@@ -45,14 +45,14 @@ function numberComparison(){
   console.log(guessArray);
   results = []
   for (let guess of guessArray){
-    if (guess === randomNumber){
-      results.push('win');
+    if (Number(guess) === randomNumber){
+      results.push('You Win!');
     }
-    else if (guess > randomNumber){
-      results.push('high');
+    else if (Number(guess) > randomNumber){
+      results.push('Too High!');
     }
-    else if (guess < randomNumber){
-      results.push('low');
+    else if (Number(guess) < randomNumber){
+      results.push('Too Low!');
     }
   }
   console.log(results);
