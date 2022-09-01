@@ -15,3 +15,8 @@ app.use(express.static('server/public'));
 app.listen(PORT, () => {
   console.log ('Server is running on port', PORT)
 })
+
+app.post('/numbers', (reg, res) => {
+  console.log('got a request')
+  console.log('req.body should be array?!?', req.body);
+})
