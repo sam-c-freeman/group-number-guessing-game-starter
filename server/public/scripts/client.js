@@ -1,5 +1,10 @@
 $(document).ready(handleReady);
 
 function handleReady() {
-  console.log("jquery is loaded!")
+ $('#submitButton').on('click', submitNumbers)
 }
+
+function submitNumbers (){
+  console.log('hiiiiii');
+}
+
