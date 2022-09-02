@@ -63,7 +63,6 @@ function resetGame(){
   $.ajax({
     method: 'POST',
     url: '/reset',
-    // data: {guessesObject} // start here Friday!  What do we send?
   }) 
 
 }

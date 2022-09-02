@@ -60,7 +60,6 @@ function numberComparison(){
 console.log(randomNumber);
 
 app.post('/reset', (req, res) => {
-  // numbersGuessed = req.body.guessesObject;
   numberGenerator();
   console.log(randomNumber);
   res.sendStatus(200);
