@@ -59,11 +59,12 @@ function numberComparison(){
 
 console.log(randomNumber);
 
-// app.post('/reset', (req, res) => {
-//   numbersGuessed = req.body.guessesObject;
-
-//   res.sendStatus(200);
-// }) //reset game post route
+app.post('/reset', (req, res) => {
+  // numbersGuessed = req.body.guessesObject;
+  numberGenerator();
+  console.log(randomNumber);
+  res.sendStatus(200);
+}) //reset game post route
 
 
 app.listen(PORT, () => {
